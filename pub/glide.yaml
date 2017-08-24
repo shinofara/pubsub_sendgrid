@@ -1,0 +1,14 @@
+package: .
+import:
+- package: cloud.google.com/go
+  subpackages:
+  - pubsub
+- package: golang.org/x/net
+  subpackages:
+  - context
+- package: google.golang.org/api
+  subpackages:
+  - iterator
+- package: google.golang.org/grpc
+  subpackages:
+  - metadata
