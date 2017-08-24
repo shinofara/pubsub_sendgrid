@@ -13,6 +13,7 @@
   "description": "Example script using node.js library",
   "dependencies": {
     "dotenv": "0.4.0",
+    "ejs": "^2.5.7",
     "sendgrid": "^1.9.2"
   }
 }
