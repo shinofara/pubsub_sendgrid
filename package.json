@@ -1,0 +1,18 @@
+{
+  "name": "sendgrid-nodejs-example",
+  "version": "0.0.3",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SendGridJP/sendgridjp-nodejs-example.git"
+  },
+  "main": "index.js",
+  "description": "Example script using node.js library",
+  "dependencies": {
+    "dotenv": "0.4.0",
+    "sendgrid": "^1.9.2"
+  }
+}
