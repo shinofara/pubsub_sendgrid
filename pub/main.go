@@ -22,6 +22,16 @@ var (
 	project string
 )
 
+type Mail struct {
+	To []string `json:"to"`
+	Subject string `json:"subject"`
+	From string `json:"from"`
+	FromName string `json:"fromName"`
+	Type string `json:"type"`
+	Template string `json:"template"`
+	Data map[string]string `json:"data"`
+}
+
 func main() {
 	flag.StringVar(&project, "project", "", "project name")
 	flag.Parse()
@@ -52,13 +62,21 @@ func main() {
 
 	list := make([]string, 1)
 	for idx, _ := range list {
-		pubs := struct{
-			Name string `json:"name"`
-		}{
-			Name: fmt.Sprintf("%d回目のPush", idx),
-		}		
-		byt, err := json.Marshal(pubs)
-		if err != nil {}		
+		post := &Mail{
+			To: []string{"shinofara+sendgrid@gmail.com"},
+			Subject: "Send to Pub/Sub",
+			From: "shinofara+pubsub@gmail.com",
+			FromName: "送信元アドレス",
+			Type: "html",
+			Template: "v1/user/register",
+			Data: map[string]string{
+				"name": "shinofara",
+			},
+		}
+
+		byt, err := json.Marshal(post)
+		if err != nil {}
+
 		if err := publishWithSettings(client, topic, byt); err != nil {
 			log.Fatalf("Failed to publish: %v, No. %d", err, idx)
 		}
