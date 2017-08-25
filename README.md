@@ -19,3 +19,17 @@ $ go run main.go --project hoge
 ```
 $ make deploy
 ```
+
+## Pub/Sub
+
+```
+{
+  to: [ 'shinofara+sendgrid@gmail.com' ],
+  subject: 'Send to Pub/Sub',
+  from: 'shinofara+pubsub@gmail.com',
+  fromName: '送信元アドレス',
+  type: 'html',
+  template: 'v1/user/register',
+  data: { name: 'shinofara' }
+}
+```
