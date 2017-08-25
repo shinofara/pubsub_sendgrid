@@ -21,7 +21,7 @@ exports.helloPubSub = function (event, callback) {
     email.setTos(tos);
     email.setFrom(from);
     email.fromname = '送信者名';
-    email.setSubject('Hello Pub/Sib');
+    email.setSubject('Hello Pub/Sub');
     email.setText('text');
     email.setHtml(html);
     email.addHeader('X-Sent-Using', 'SendGrid-API');
